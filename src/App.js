@@ -16,11 +16,16 @@ class App extends Component {
     };
   }
 
+  addIdea = (idea) => {
+    const newIdeas = this.state.ideas.concat(idea);
+    this.setState({ideas: newIdeas});
+  }
+
   render() {
     return (
       <main>
         <h1>Ideabox</h1>
-        <Form />
+        <Form addIdea={this.addIdea}/>
         <Ideas ideas= {this.state.ideas}/>
       </main>
     );
