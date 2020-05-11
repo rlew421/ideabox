@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import Ideas from './Ideas';
 import './App.css';
+import Form from './Form';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// What kind of component should App be?
+// Class or function?
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      ideas: [
+        {title: "Dogs should vote", description: "They deserve rights", id: 1},
+        {title: "Users should be able to visit space in Animal Crossing",  description: "They should fly to the moon", id: 2}
+      ]
+    };
+  }
+
+  render() {
+    return (
+      <main>
+        <h1>Ideabox</h1>
+        <Form />
+        <Ideas ideas= {this.state.ideas}/>
+      </main>
+    );
+  }
+
 }
 
 export default App;
