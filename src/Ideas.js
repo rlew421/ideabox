@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from './Card';
+import './Ideas.css'
 // Ideas will receive a list of Ideas from the App via props (doesn't have to hold on to its own state)
 
 const Ideas = (props) => {
@@ -8,6 +9,7 @@ const Ideas = (props) => {
       <Card
         title={idea.title}
         description={idea.description}
+        deleteIdea={deleteIdea}
       />
     )
   })
