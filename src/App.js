@@ -33,7 +33,7 @@ class App extends Component {
         <h1>Ideabox</h1>
         {!this.state.ideas.length && <h2>No ideas yet -- add some!</h2>}
         <Form addIdea={this.addIdea}/>
-        <Ideas ideas= {this.state.ideas}/>
+        <Ideas ideas= {this.state.ideas} deleteIdea={this.deleteIdea}/>
       </main>
     );
   }
